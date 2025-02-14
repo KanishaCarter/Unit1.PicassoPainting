@@ -9,20 +9,26 @@ body {
 
 
 .art {
-    width: 600px;
-    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 500px;
     padding: 20px;
     border-radius: 50px;
-    background-color: pink;
+    background-color: black;
     border: 5px solid black;
 }
 
 .grid-layout {
     display: grid;
     grid-template-areas: 
-    "header_block header_block header_block"
-    "menu_block main_block right_block"
-    "menu_block main_block right_block";
+        "header_block header_block header_block"
+        "menu_block main_block right_block"
+        "menu_block main_block right_block";
+    grid-template-columns: 200px 100px 300px;
+    grid-template-rows: 150px 200px 100px;
+    gap: 10px;
     padding: 10px;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto auto auto;
@@ -35,7 +41,8 @@ body {
     text-align: center;
     padding: 20px;
     font-size: 20px;
-    color: white;
+    border: 5px black;
+    border-radius: 100%;
 }
 
 .grid-layout > div:nth-child(even) {
@@ -48,12 +55,15 @@ body {
 
 .block1 {
     background-color: white;
-    height: 300px;
+    grid-area: header_block;
+    height: 150px;
+    length: 50px;
+    padding: 25px;
 }
 
 .block2 {
     background-color: gray;
-    width: 70px;
+    grid-area: right-block;
 }
 
 .block3 {
@@ -62,14 +72,20 @@ body {
 
 .block4 {
     background-color: red;
+    grid-area: main_block;
+    width: 240px;
+    height:100px;
 }
 
 .block5 {
     background-color: blue;
+    grid-area: right_block;
+    width: 100px;
 }
 
 .block6 {
     background-color: brown;
+    grid-area: main_block;
 }
 .info-form {
     justify-items: center;
